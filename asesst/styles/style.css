@@ -1,0 +1,599 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #02448f;
+  --secondary-color: #464646;
+  --accent-color: #0026ff;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #ffffff;
+  --border-color: #000000;
+  --shadow-color: #000000;
+  --hover-color: #ffffff;
+  --active-color: #000000c4;
+  --focus-color: #000000;
+  --error-color: #850000;
+  --success-color: #01960d;
+  --warning-color: #fdff6e;
+  --info-color: #00a151;
+  --disabled-color: #696969;
+}
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--hover-color);
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--background-color);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    overflow-x: hidden;
+  }
+  appearance: 100%;
+}
+.navDiv {
+  background-image: url(../img/navImg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100dvh;
+  width: 104vw;
+  position: relative;
+}
+.navDivEdit {
+  background-color: #637587dc;
+  height: 100vh;
+}
+.lodaers {
+  text-align: center;
+  justify-self: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+  animation: loadingAnimation 1 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+/* From Uiverse.io by pradipkaityuiux */ 
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 3px solid rgba(0, 102, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #0066ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #0066ff;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #0066ff;
+  border-right: 3px solid #0066ff;
+  border-radius: 50%;
+  -webkit-animation: animateC 2s linear infinite;
+          animation: animateC 2s linear infinite;
+}
+
+.loader span {
+  display: block;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00aeff;
+  top: -6px;
+  right: -8px;
+  -webkit-box-shadow: 0 0 20px 5px #0066ff;
+          box-shadow: 0 0 20px 5px #0066ff;
+}
+
+@-webkit-keyframes animateC {
+  0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+  }
+}
+
+@keyframes animateC {
+  0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes animate {
+  0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(405deg);
+              transform: rotate(405deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(405deg);
+              transform: rotate(405deg);
+  }
+}
+@-webkit-keyframes loadingAnimation {
+   0% {
+    opacity: 1;
+  }
+  100% {
+   opacity: 0;
+   z-index: -1;
+  }
+}
+@keyframes loadingAnimation {
+  0% {
+   opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/* From Uiverse.io by Yaya12085 */
+#form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 20px;
+  position: fixed;
+  z-index: 9;
+  right: -1000px;
+  transition: 0.3s all;
+}
+.title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  -webkit-animation: pulse 1s linear infinite;
+  animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: royalblue;
+}
+
+.signin a:hover {
+  -webkit-text-decoration: underline royalblue;
+  text-decoration: underline royalblue;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+#form label {
+  position: relative;
+}
+
+#form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+#form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+#form label .input:-moz-placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+#form label .input:-ms-input-placeholder + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+#form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+#form label .input:focus + span,
+.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+#form label .input:valid + span {
+  color: rgba(255, 255, 255, 0);
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  -webkit-transform: 0.3s ease;
+  -ms-transform: 0.3s ease;
+  transform: 0.3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* From Uiverse.io by boryanakrasteva */
+/* Customize the label (the checkbox-btn) */
+.checkbox-btn {
+  display: block;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-btn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-btn label {
+  cursor: pointer;
+  font-size: 14px;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 2.5px solid #464646;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+.checkbox-btn input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  top: 40%;
+  width: 10px;
+  height: 14px;
+  border: 2px solid #0ea021;
+  -webkit-filter: drop-shadow(0px 0px 10px #0ea021);
+  filter: drop-shadow(0px 0px 10px #0ea021);
+  border-width: 0 2.5px 2.5px 0;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+  -ms-transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+}
+
+/* Show the checkmark when checked */
+.checkbox-btn input:checked ~ .checkmark:after {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  -ms-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  -webkit-animation: pulse 1s ease-in;
+  animation: pulse 1s ease-in;
+}
+
+.checkbox-btn input:checked ~ .checkmark {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border: none;
+}
+
+@-webkit-keyframes pulse {
+  0%,
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+  }
+}
+/* From Uiverse.io by UwUTastisch */ 
+.tooltip-container {
+  position: fixed;
+  background-color: #00b7ff;
+  background-image: linear-gradient(
+    225deg,
+    #0090b4 0%,
+    #00aeff 50%,
+    #2b86c5 100%
+  );
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  /*padding: 0.7em 1.8em;*/
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 7;
+  bottom: 20px;
+  left: 10px;
+}
+
+.tooltip-container .borde-back {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(248, 250, 252, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.tooltip-container .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background-color: #00a2ff;
+  background-image: linear-gradient(
+    225deg,
+    #0090b4 0%,
+    #00aeff 50%,
+    #2b86c5 100%
+  );
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.tooltip {
+  position: absolute;
+  top: -2;
+  z-index: -10;
+  transform: scaleX(0);
+  transform-origin: left center;
+  margin-left: 5px;
+  height: 50px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s;
+  border-radius: 0 50px 50px 0;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #00ecfd 0%,
+    #006bf7 50%,
+    #2b86c5 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 16px;
+  color: #fff;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 800px;
+  padding-left: 40px;
+  margin-left: -25px;
+  left: 100%;
+}
+
+.tooltip-container:hover .tooltip {
+  transform: unset;
+  /* Altere para a posição desejada (a direita) */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: -10;
+}
+
+.tooltip-container:hover {
+  transform: translateX(-0px);
+  transition: 0.5s linear;
+}
+
+.tooltip-container:hover .icon {
+  transform: rotate(360deg);
+  transition: 0.5s linear;
+}
